@@ -108,7 +108,7 @@ def render_tshirt(color_rgb, iniciales="", extra="", pos_iniciales="Centro del P
     draw_txt = ImageDraw.Draw(txt_layer)
     if iniciales:
         try:
-            font = ImageFont.truetype("DejaVuSans-Bold.ttf", 20)
+            font = ImageFont.truetype("DejaVuSans-Bold.ttf", 15)
         except IOError:
             font = ImageFont.load_default()
         
@@ -125,7 +125,7 @@ def render_tshirt(color_rgb, iniciales="", extra="", pos_iniciales="Centro del P
             text_x, text_y = int(W * 0.72), int(H * 0.26)
             rotation_angle = -15
         elif pos_iniciales == "Inferior (Izquierda)":
-            text_x, text_y = int(W * 0.22), int(H * 0.8)
+            text_x, text_y = int(W * 0.5), int(H * 0.8)
         
         draw_txt.text((text_x, text_y), iniciales, font=font, fill=initials_color)
         
@@ -241,6 +241,7 @@ elif st.session_state.cart:
 else:
 
     st.info("No hay productos en el carrito aún.")
+
 
 
 
