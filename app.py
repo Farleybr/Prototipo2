@@ -108,7 +108,7 @@ def render_tshirt(color_rgb, iniciales="", extra="", pos_iniciales="Centro del P
     draw_txt = ImageDraw.Draw(txt_layer)
     if iniciales:
         try:
-            font = ImageFont.truetype("arial.ttf", 70)
+            font = ImageFont.truetype("DejaVuSans-Bold.ttf", 70)
         except IOError:
             font = ImageFont.load_default()
         
@@ -241,4 +241,5 @@ elif st.session_state.cart:
 else:
 
     st.info("No hay productos en el carrito aún.")
+
 
