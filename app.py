@@ -121,7 +121,7 @@ def render_tshirt(color_rgb, iniciales="", extra="", pos_iniciales="Centro del P
             text_x, text_y = (W - text_w) // 2, int(H * 0.4)
         elif pos_iniciales == "Manga (Derecha)":
             text_x, text_y = int(W * 0.75), int(H * 0.26)
-            rotation_angle = -17
+            rotation_angle = -30
         elif pos_iniciales == "Inferior (Izquierda)":
             text_x, text_y = int(W * 0.26), int(H * 0.8)
         
@@ -187,7 +187,7 @@ with col_controls:
         st.text_input("Iniciales (máx. 3)", key="iniciales", max_chars=3, on_change=calcular_precio)
         st.radio(
             "Posición de las iniciales",
-            ["Centro del Pecho", "Bolsillo (Izquierdo)", "Manga (Derecha)", "Inferior (Izquierda)"],
+            ["Centro del Pecho", "Manga (Derecha)", "Inferior (Izquierda)"],
             key="iniciales_pos",
             horizontal=True
         )
@@ -239,6 +239,7 @@ elif st.session_state.cart:
 else:
 
     st.info("No hay productos en el carrito aún.")
+
 
 
 
