@@ -119,13 +119,11 @@ def render_tshirt(color_rgb, iniciales="", extra="", pos_iniciales="Centro del P
         rotation_angle = 0
         if pos_iniciales == "Centro del Pecho":
             text_x, text_y = (W - text_w) // 2, int(H * 0.4)
-        elif pos_iniciales == "Bolsillo (Izquierdo)":
-            text_x, text_y = int(W * 0.28 - text_w / 2), int(H * 0.25)
         elif pos_iniciales == "Manga (Derecha)":
-            text_x, text_y = int(W * 0.72), int(H * 0.26)
-            rotation_angle = -15
+            text_x, text_y = int(W * 0.75), int(H * 0.26)
+            rotation_angle = -17
         elif pos_iniciales == "Inferior (Izquierda)":
-            text_x, text_y = int(W * 0.5), int(H * 0.8)
+            text_x, text_y = int(W * 0.26), int(H * 0.8)
         
         draw_txt.text((text_x, text_y), iniciales, font=font, fill=initials_color)
         
@@ -241,6 +239,7 @@ elif st.session_state.cart:
 else:
 
     st.info("No hay productos en el carrito aún.")
+
 
 
 
